@@ -3,75 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magma | Premium B2B</title>
-    <!-- Fuente premium -->
+    <title>Magma | Granizados para Eventos Corporativos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <!-- Todo el diseño (CSS) incrustado directamente aquí para que no falle -->
     <style>
+        /* === ESTILO MAGMA LITERAL === */
         :root {
-            --bg-dark: #000000;
-            --bg-card: rgba(25, 25, 25, 0.6);
-            --magma-orange: #FF3300;
-            --text-main: #FFFFFF;
-            --text-muted: #888888;
+            --volcano-dark: #0a0503; /* Casi negro con un toque rojizo */
+            --volcano-rock: #140a08;
+            --magma-red: #ff2a00;
+            --magma-orange: #ff7300;
+            --magma-yellow: #ffcc00;
+            --text-light: #ffffff;
+            --text-ash: #b0a39f;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+        
+        body { 
+            background-color: var(--volcano-dark); 
+            color: var(--text-light); 
+            line-height: 1.6; 
+            /* Fondo sutil de "calor" radiante */
+            background-image: radial-gradient(circle at 50% 0%, rgba(255, 42, 0, 0.1) 0%, transparent 70%);
+        }
+        
         .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
-        .highlight { color: var(--magma-orange); }
         .text-center { text-align: center; }
 
+        /* TEXTOS ARDIENTES */
+        .text-fire {
+            background: linear-gradient(to right, var(--magma-yellow), var(--magma-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* BOTONES DE LAVA */
+        .btn-magma { 
+            display: inline-block; 
+            background: linear-gradient(45deg, var(--magma-red), var(--magma-orange));
+            color: #fff; 
+            padding: 18px 45px; 
+            border-radius: 6px; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            text-decoration: none; 
+            letter-spacing: 2px; 
+            font-size: 1rem; 
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 42, 0, 0.5); /* Resplandor */
+            transition: all 0.3s ease; 
+        }
+        .btn-magma:hover { 
+            background: linear-gradient(45deg, var(--magma-orange), var(--magma-yellow));
+            box-shadow: 0 0 30px rgba(255, 115, 0, 0.8);
+            transform: scale(1.05); 
+            color: #000;
+        }
+        .full-width { width: 100%; margin-top: 20px; }
+
         /* HERO SECTION */
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('img/Heroprincipaldela\\ páginadeinicio.png') center/cover no-repeat; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9)); z-index: 1; }
+        .hero { 
+            position: relative; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            background: url('img/Heroprincipaldela\\ páginadeinicio.png') center/cover no-repeat; 
+        }
+        .hero-overlay { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(to bottom, rgba(10,5,3,0.6), rgba(10,5,3,0.95)); 
+            z-index: 1; 
+        }
         .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
-        .logo-premium { width: 180px; margin-bottom: 30px; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; line-height: 1.1; }
-        .hero p { color: var(--text-muted); font-size: 1.2rem; font-weight: 300; margin-bottom: 40px; padding: 0 10%; }
-
-        /* BOTONES */
-        .btn-primary { display: inline-block; background-color: var(--text-main); color: var(--bg-dark); padding: 16px 40px; border-radius: 4px; font-weight: 800; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; font-size: 0.9rem; transition: all 0.3s ease; border: 1px solid transparent; }
-        .btn-primary:hover { background-color: transparent; color: var(--text-main); border: 1px solid var(--text-main); }
-        .full-width { width: 100%; margin-top: 10px; cursor: pointer; }
-
-        /* SECCIONES Y BENEFICIOS */
-        .benefits-section, .catalog-section, .contact-section { padding: 100px 0; background-color: #080808; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 40px; }
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        .benefit-card { background: var(--bg-card); padding: 40px 30px; border-radius: 8px; border-left: 3px solid var(--magma-orange); transition: transform 0.3s; }
-        .benefit-card:hover { transform: translateY(-5px); }
-        .benefit-card h3 { margin-bottom: 15px; font-size: 1.2rem; }
-        .benefit-card p { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* CATÁLOGO DE PAQUETES */
-        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .package-card { background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; position: relative; transition: all 0.3s; }
-        .package-card:hover { border-color: var(--magma-orange); box-shadow: 0 10px 30px rgba(255, 51, 0, 0.15); }
-        .premium-card { transform: scale(1.05); border-color: var(--magma-orange); z-index: 2; }
-        .badge { position: absolute; top: 15px; right: -30px; background: var(--magma-orange); color: #fff; font-size: 0.7rem; font-weight: 800; padding: 5px 40px; transform: rotate(45deg); letter-spacing: 1px; }
-        .package-img { width: 100%; height: 220px; object-fit: cover; filter: brightness(0.8); }
-        .package-content { padding: 30px; }
-        .package-price { color: var(--magma-orange); font-weight: 500; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase; }
-        .specs-list { list-style: none; }
-        .specs-list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
-        .specs-list li span:first-child { color: var(--text-muted); }
-
-        /* FORMULARIO GLASSMORPHISM */
-        .glass-form { background: var(--bg-card); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); padding: 60px 40px; border-radius: 12px; max-width: 550px; margin: 0 auto; text-align: center; }
-        .iso-small { width: 50px; margin-bottom: 20px; }
-        .glass-form p { color: var(--text-muted); margin-bottom: 30px; font-weight: 300; }
-        form { display: flex; flex-direction: column; gap: 15px; }
-        input { width: 100%; padding: 16px; background-color: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; color: var(--text-main); font-size: 1rem; font-family: 'Inter', sans-serif; outline: none; transition: border 0.3s ease; }
-        input:focus { border-color: var(--text-main); }
-
-        /* FOOTER */
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 0.8rem; background-color: #000; }
+        .logo-premium { width: 220px; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 42, 0, 0.6)); }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .glass-form { padding: 40px 20px; } .premium-card { transform: scale(1); } }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 15px; line-height: 1.1; }
+        .hero p { color: var(--text-ash); font-size: 1.3rem; margin-bottom: 40px; padding: 0 5%; font-weight: 400; }
+
+        /* SECCIONES */
+        .section-pad { padding: 100px 0; border-bottom: 1px solid rgba(255, 42, 0, 0.2); }
+        h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; }
+        .subtitle { font-size: 1.2rem; color: var(--text-ash); margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* BENEFICIOS */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .benefit-card { 
+            background: var(--volcano-rock); 
+            padding: 40px 30px; 
+            border-radius: 12px; 
+            border: 1px solid rgba(255, 42, 0, 0.3);
+            border-bottom: 4px solid var(--magma-red); 
+            transition: transform 0.3s; 
+        }
+        .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(255, 42, 0, 0.2); }
+        .benefit-card h3 { margin-bottom: 15px; font-size: 1.3rem; color: var(--magma-orange); }
+        .benefit-card p { color: var(--text-ash); font-size: 1rem; }
+
+        /* PAQUETES (BANNERS DE SERVICIO) */
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .package-card { 
+            background: var(--volcano-rock); 
+            border: 1px solid rgba(255, 115, 0, 0.4); 
+            border-radius: 15px; 
+            overflow: hidden; 
+            position: relative; 
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+        .package-card:hover { 
+            border-color: var(--magma-yellow); 
+            box-shadow: 0 0 30px rgba(255, 42, 0, 0.4); 
+        }
+        .package-img { width: 100%; height: 250px; object-fit: cover; }
+        .package-content { padding: 35px; }
+        .package-content h3 { font-size: 1.8rem; margin-bottom: 5px; }
+        .package-price { color: var(--magma-yellow); font-weight: 700; margin-bottom: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;}
+        .specs-list { list-style: none; }
+        .specs-list li { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+        .specs-list li span:first-child { color: var(--text-ash); font-weight: 700;}
+
+        /* FORMULARIO B2B */
+        .contact-box { 
+            background: linear-gradient(145deg, var(--volcano-rock), #050201);
+            border: 1px solid var(--magma-red); 
+            box-shadow: 0 0 40px rgba(255, 42, 0, 0.15);
+            padding: 60px 40px; 
+            border-radius: 15px; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            text-align: center; 
+        }
+        .iso-small { width: 60px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--magma-orange)); }
+        form { display: flex; flex-direction: column; gap: 20px; margin-top: 30px; }
+        input { 
+            width: 100%; padding: 18px; 
+            background-color: rgba(0, 0, 0, 0.7); 
+            border: 1px solid rgba(255, 115, 0, 0.3); 
+            border-radius: 6px; color: #fff; font-size: 1rem; 
+            outline: none; transition: border 0.3s ease; 
+        }
+        input:focus { border-color: var(--magma-yellow); box-shadow: 0 0 10px rgba(255, 204, 0, 0.3); }
+
+        footer { text-align: center; padding: 40px 0; background-color: #000; border-top: 2px solid var(--magma-red); color: var(--text-ash); font-size: 0.9rem; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .contact-box { padding: 40px 20px; } }
     </style>
 </head>
 <body>
@@ -81,80 +163,68 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <img src="img/Logo.png" alt="Magma Logo" class="logo-premium">
-            <h1>LA ENERGÍA QUE TU EVENTO NECESITA.</h1>
-            <p>Granizados de alta gama con sabores explosivos. Diseñados exclusivamente para transformar reuniones corporativas en experiencias dinámicas.</p>
-            <a href="#cotizar" class="btn-primary">Agendar Experiencia</a>
+            <h1>Sabores <span class="text-fire">Explosivos</span> para tus eventos</h1>
+            <p>Magma es la empresa líder en servicios de granizados para eventos corporativos. Rompemos la rutina con una experiencia volcánica que atraerá a todos tus invitados.</p>
+            <a href="#cotizar" class="btn-magma">Contactar a Magma</a>
         </div>
     </header>
 
-    <!-- SECCIÓN DE BENEFICIOS -->
-    <section class="benefits-section">
+    <!-- SECCIÓN DE INFO -->
+    <section class="section-pad">
         <div class="container">
-            <h2 class="text-center">Por qué elegir <span class="highlight">Magma</span></h2>
+            <h2 class="text-center">¿QUÉ ES <span class="text-fire">MAGMA?</span></h2>
+            <p class="text-center subtitle">Ofrecemos un servicio premium de granizados diseñados para darle vida y energía a convenciones, fiestas de fin de año y activaciones de marca. Literal, llevamos la erupción a tu evento.</p>
+            
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <h3>🧊 Cero Estrés Logístico</h3>
-                    <p>Nos encargamos del montaje completo, operación de las máquinas y desmontaje en tu evento.</p>
+                    <h3>🔥 Granizados Únicos</h3>
+                    <p>Olvídate de las bebidas aburridas. Nuestros granizados tienen colores y sabores que hacen erupción en el paladar.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>⚡ Impacto Visual</h3>
-                    <p>Barras iluminadas y colores neón que se vuelven el centro de atención de cualquier activación.</p>
+                    <h3>🌋 Montaje Volcánico</h3>
+                    <p>Llevamos banners, logos e iluminación que transforman un simple stand en el centro de atención de tu evento.</p>
                 </div>
                 <div class="benefit-card">
-                    <h3>🚀 Sabores Explosivos</h3>
-                    <p>Menú personalizable con opciones con o sin alcohol para adaptarse al perfil de tus invitados.</p>
+                    <h3>💼 B2B Todo Incluido</h3>
+                    <p>Nos encargamos de toda la logística. Tú solo nos dices dónde es el evento corporativo y nosotros hacemos la magia.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CATÁLOGO DE PAQUETES -->
-    <section class="catalog-section">
+    <!-- CATÁLOGO / PAQUETES -->
+    <section class="section-pad">
         <div class="container">
-            <h2 class="text-center">Paquetes <span class="highlight">Corporativos</span></h2>
+            <h2 class="text-center">PAQUETES <span class="text-fire">EMPRESARIALES</span></h2>
+            <p class="text-center subtitle">Elige el nivel de erupción que necesitas para tu próxima reunión corporativa.</p>
+            
             <div class="packages-grid">
                 <!-- Paquete 1 -->
                 <div class="package-card">
-                    <img src="img/Granizadosolo.png" alt="Paquete Start" class="package-img">
+                    <img src="img/Granizadodecerca.png" alt="Paquete Reactivación" class="package-img">
                     <div class="package-content">
-                        <h3>Paquete Startup</h3>
-                        <p class="package-price">Ideal para reuniones pequeñas</p>
+                        <h3>Activación Magma</h3>
+                        <p class="package-price">Para eventos y reuniones cortas</p>
                         <ul class="specs-list">
-                            <li><span>Capacidad:</span> <span>Hasta 50 personas</span></li>
-                            <li><span>Sabores:</span> <span>2 a elegir</span></li>
-                            <li><span>Duración:</span> <span>2 Horas de servicio</span></li>
-                            <li><span>Incluye:</span> <span>1 Operador Magma</span></li>
+                            <li><span>Granizados:</span> <span>Hasta 100 vasos</span></li>
+                            <li><span>Sabores:</span> <span>2 explosivos a elegir</span></li>
+                            <li><span>Montaje:</span> <span>Barra Magma estándar</span></li>
+                            <li><span>Personal:</span> <span>1 Operador</span></li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Paquete 2 -->
-                <div class="package-card premium-card">
-                    <div class="badge">MÁS VENDIDO</div>
-                    <img src="img/3granizados.jpg" alt="Paquete Corporate" class="package-img">
-                    <div class="package-content">
-                        <h3>Corporate Pro</h3>
-                        <p class="package-price">Para activaciones medianas</p>
-                        <ul class="specs-list">
-                            <li><span>Capacidad:</span> <span>Hasta 150 personas</span></li>
-                            <li><span>Sabores:</span> <span>4 a elegir</span></li>
-                            <li><span>Duración:</span> <span>4 Horas de servicio</span></li>
-                            <li><span>Incluye:</span> <span>Barra completa + 2 Op.</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Paquete 3 -->
                 <div class="package-card">
-                    <img src="img/Fotopromocional.png" alt="Paquete Summit" class="package-img">
+                    <img src="img/3granizados.jpg" alt="Paquete Corporativo" class="package-img">
                     <div class="package-content">
-                        <h3>Magma Summit</h3>
-                        <p class="package-price">Congresos y fin de año</p>
+                        <h3>Erupción Corporativa</h3>
+                        <p class="package-price">El favorito de las empresas</p>
                         <ul class="specs-list">
-                            <li><span>Capacidad:</span> <span>+300 personas</span></li>
-                            <li><span>Sabores:</span> <span>Menú completo + Mixología</span></li>
-                            <li><span>Duración:</span> <span>Evento completo</span></li>
-                            <li><span>Incluye:</span> <span>Montaje VIP + Personal.</span></li>
+                            <li><span>Granizados:</span> <span>Hasta 250 vasos</span></li>
+                            <li><span>Sabores:</span> <span>4 sabores (opción alcohol)</span></li>
+                            <li><span>Montaje:</span> <span>Banners y Branding Magma</span></li>
+                            <li><span>Personal:</span> <span>2 Operadores</span></li>
                         </ul>
                     </div>
                 </div>
@@ -163,25 +233,25 @@
     </section>
 
     <!-- FORMULARIO DE CONTACTO -->
-    <section id="cotizar" class="contact-section">
+    <section id="cotizar" class="section-pad">
         <div class="container">
-            <div class="glass-form">
+            <div class="contact-box">
                 <img src="img/isotipo.png" alt="Magma Isotipo" class="iso-small">
-                <h2>Alianzas B2B</h2>
-                <p>Ingresa los datos de tu empresa para enviarte una cotización formal de nuestros paquetes.</p>
+                <h2>Cierra el trato</h2>
+                <p style="color: var(--text-ash); margin-bottom: 20px;">Atrae a tus clientes o consiente a tus empleados. Déjanos tus datos empresariales y agendemos tu próximo evento.</p>
                 <form>
                     <input type="text" placeholder="Nombre completo" required>
-                    <input type="text" placeholder="Empresa" required>
+                    <input type="text" placeholder="Nombre de la Empresa" required>
                     <input type="email" placeholder="Correo corporativo" required>
-                    <input type="text" placeholder="Número estimado de invitados" required>
-                    <button type="submit" class="btn-primary full-width">Solicitar Propuesta</button>
+                    <input type="text" placeholder="¿Para cuántas personas es el evento?" required>
+                    <button type="submit" class="btn-magma full-width">Solicitar Cotización</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Magma Corporate. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Magma Corporativo. Llevando la erupción a tu empresa.</p>
     </footer>
 
 </body>
