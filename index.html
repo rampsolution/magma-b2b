@@ -346,20 +346,40 @@
         }
         .wa-btn svg { width: 28px; height: 28px; fill: #fff; }
 
-        /* ─── RESPONSIVE ─── */
+        /* ══════ RESPONSIVE (CELULARES) ══════ */
+        /* Mejoras específicas para pantallas pequeñas */
+        @media (max-width: 900px) {
+            .pkg-grid, .ben-grid, .tes-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        }
         @media (max-width: 768px) {
             .nav-links  { display: none; }
             .hamburger  { display: flex; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .steps-wrap { grid-template-columns: 1fr; }
+            
+            /* Ajuste del contador para celular */
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 10px; }
+            .stat-n { font-size: 2.2rem; }
+            
+            /* Pasos de "Cómo Funciona" */
+            .steps-wrap { grid-template-columns: 1fr; gap: 30px; }
             .steps-wrap::before { display: none; }
-            .contact-box { padding: 36px 22px; }
-            .sec { padding: 68px 0; }
+            
+            /* Ajuste de formulario y márgenes */
+            .contact-box { padding: 40px 24px; }
+            .sec { padding: 60px 0; }
+            .sec-title { font-size: 2rem; margin-bottom: 10px; }
+            .sec-sub { font-size: .95rem; margin-bottom: 40px; }
+            
+            .hero-logo { width: 140px; margin-bottom: 20px; }
         }
         @media (max-width: 480px) {
-            .hero h1     { font-size: 2.3rem; }
-            .hero-btns   { flex-direction: column; align-items: stretch; }
-            .btn         { width: 100%; justify-content: center; }
+            .hero h1     { font-size: 2.2rem; }
+            .hero-sub    { font-size: .95rem; padding: 0 10px; }
+            .hero-btns   { flex-direction: column; align-items: stretch; gap: 12px; }
+            .btn         { width: 100%; justify-content: center; padding: 14px; }
+            
+            .ben-card { padding: 30px 20px; }
+            .pkg-body { padding: 24px; }
+            .stat-l { font-size: 0.7rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             .reveal      { opacity: 1; transform: none; transition: none; }
@@ -626,14 +646,11 @@
                         <input type="email" id="em" placeholder="correo@tuempresa.com" autocomplete="email">
                         <div class="field-msg" id="em-msg">Ingresa un correo válido.</div>
                     </div>
-                    
-                    <!-- NUEVO CAMPO DE TELÉFONO -->
                     <div class="field">
                         <label for="ph">Número de teléfono</label>
                         <input type="tel" id="ph" placeholder="Ej: +505 8888 8888" autocomplete="tel">
                         <div class="field-msg" id="ph-msg">Por favor ingresa un número de contacto.</div>
                     </div>
-
                     <div class="field">
                         <label for="gu">¿Cuántas personas asistirán?</label>
                         <input type="text" id="gu" placeholder="Ej: 150 personas">
@@ -759,7 +776,7 @@
             { id: 'fn', ok: v => v.trim().length >= 2 },
             { id: 'co', ok: v => v.trim().length >= 2 },
             { id: 'em', ok: v => isEmail(v) },
-            { id: 'ph', ok: v => v.trim().length >= 8 }, /* Chequeo para el teléfono */
+            { id: 'ph', ok: v => v.trim().length >= 8 },
             { id: 'gu', ok: v => v.trim().length >= 1 }
         ];
         let valid = true;
