@@ -5,52 +5,209 @@
 \margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 body \{\
-    margin: 0;\
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;\
-    background-color: #121212; /* Fondo corporativo oscuro */\
-    color: #ffffff;\
+\f0\fs24 \cf0 /* Configuraci\'f3n de colores volc\'e1nicos */\
+:root \{\
+    --color-fondo: #0a0a0a; /* Negro muy oscuro pero no absoluto */\
+    --color-secundario: #151515; /* Gris carb\'f3n para contrastar secciones */\
+    --naranja-magma: #ff4500;\
+    --amarillo-lava: #ffaa00;\
+    --texto-claro: #f0f0f0;\
+    --texto-gris: #b3b3b3;\
 \}\
 \
-.hero \{\
-    height: 100vh;\
-    display: flex;\
-    flex-direction: column;\
-    justify-content: center;\
-    align-items: center;\
-    text-align: center;\
-    /* Aqu\'ed luego puedes poner tu banner de fondo cambiando la URL */\
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)); \
+* \{\
+    box-sizing: border-box;\
+    margin: 0;\
+    padding: 0;\
+\}\
+\
+body \{\
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;\
+    background-color: var(--color-fondo);\
+    color: var(--texto-claro);\
+    line-height: 1.6;\
+\}\
+\
+.contenedor \{\
+    max-width: 1200px;\
+    margin: 0 auto;\
     padding: 0 20px;\
 \}\
 \
-h1 \{\
-    font-size: 3.5rem;\
-    color: #ff4500; /* Naranja magma */\
-    margin-bottom: 15px;\
-    font-weight: 800;\
-\}\
+.text-center \{ text-align: center; \}\
+.resaltado \{ color: var(--naranja-magma); \}\
+.dark-bg \{ background-color: var(--color-secundario); \}\
 \
-p \{\
-    font-size: 1.2rem;\
-    color: #cccccc;\
-    margin-bottom: 40px;\
-\}\
-\
+/* Botones (Llamados a la acci\'f3n) */\
 .btn-volcan \{\
+    display: inline-block;\
     padding: 15px 35px;\
-    background-color: #ffaa00; /* Amarillo brillante */\
-    color: #000;\
+    background: linear-gradient(45deg, var(--naranja-magma), var(--amarillo-lava));\
+    color: #fff;\
     text-decoration: none;\
-    font-weight: bold;\
-    border-radius: 8px;\
+    font-weight: 800;\
+    border-radius: 50px;\
     text-transform: uppercase;\
     letter-spacing: 1px;\
     transition: all 0.3s ease;\
+    border: none;\
+    cursor: pointer;\
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);\
 \}\
 \
 .btn-volcan:hover \{\
-    background-color: #ff4500; /* Cambia a rojo fuego al pasar el mouse */\
+    transform: scale(1.05) translateY(-3px);\
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.6);\
+\}\
+\
+.w-100 \{ width: 100%; \}\
+\
+/* Hero Section (Donde va tu fondo principal) */\
+.hero \{\
+    height: 100vh;\
+    display: flex;\
+    justify-content: center;\
+    align-items: center;\
+    text-align: center;\
+    /* Vinculamos la foto "Heroprincipaldela p\'e1ginadeinicio.png" con un filtro oscuro para que se lea el texto */\
+    background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), url('img/Heroprincipaldela\\\\ p\'e1ginadeinicio.png');\
+    background-size: cover;\
+    background-position: center;\
+    padding: 0 20px;\
+\}\
+\
+.hero .logo \{\
+    max-width: 250px;\
+    margin-bottom: 30px;\
+    filter: drop-shadow(0px 0px 15px rgba(255, 69, 0, 0.6));\
+\}\
+\
+.hero h1 \{\
+    font-size: 3.5rem;\
     color: #fff;\
-    transform: scale(1.05);\
+    margin-bottom: 20px;\
+    font-weight: 900;\
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);\
+\}\
+\
+.hero p \{\
+    font-size: 1.3rem;\
+    color: var(--texto-gris);\
+    margin-bottom: 40px;\
+    max-width: 650px;\
+    margin-left: auto;\
+    margin-right: auto;\
+\}\
+\
+/* Secciones de Informaci\'f3n y Galer\'eda */\
+.seccion-info, .seccion-galeria, .seccion-contacto \{\
+    padding: 100px 0;\
+\}\
+\
+h2 \{\
+    font-size: 2.5rem;\
+    margin-bottom: 20px;\
+    font-weight: 800;\
+\}\
+\
+.subtitulo \{\
+    font-size: 1.2rem;\
+    color: var(--texto-gris);\
+    margin-bottom: 50px;\
+\}\
+\
+/* Grid de la secci\'f3n "Qu\'e9 es Magma" */\
+.grid-2 \{\
+    display: grid;\
+    grid-template-columns: 1fr 1fr;\
+    gap: 50px;\
+    align-items: center;\
+\}\
+\
+.imagen-info img \{\
+    width: 100%;\
+    border-radius: 15px;\
+    box-shadow: 0 10px 30px rgba(255, 69, 0, 0.15);\
+\}\
+\
+/* Galer\'eda de 3 columnas */\
+.galeria-grid \{\
+    display: grid;\
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\
+    gap: 30px;\
+\}\
+\
+.galeria-item \{\
+    border-radius: 15px;\
+    overflow: hidden;\
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);\
+    transition: transform 0.3s ease;\
+    height: 350px; /* Altura fija para que las fotos se vean alineadas */\
+\}\
+\
+.galeria-item:hover \{\
+    transform: translateY(-10px);\
+\}\
+\
+.galeria-item img \{\
+    width: 100%;\
+    height: 100%;\
+    object-fit: cover;\
+    display: block;\
+\}\
+\
+/* Formulario de Contacto (Captaci\'f3n B2B) */\
+.contacto-box \{\
+    background-color: var(--color-fondo);\
+    padding: 50px;\
+    border-radius: 20px;\
+    max-width: 600px;\
+    margin: 0 auto;\
+    text-align: center;\
+    border: 1px solid #333;\
+    box-shadow: 0 0 40px rgba(255, 69, 0, 0.08);\
+\}\
+\
+.isotipo \{\
+    width: 80px;\
+    margin-bottom: 20px;\
+\}\
+\
+.formulario-b2b \{\
+    display: flex;\
+    flex-direction: column;\
+    gap: 20px;\
+    margin-top: 30px;\
+\}\
+\
+.formulario-b2b input \{\
+    padding: 15px;\
+    border-radius: 8px;\
+    border: 1px solid #444;\
+    background-color: #1a1a1a;\
+    color: #fff;\
+    font-size: 1rem;\
+    transition: all 0.3s;\
+\}\
+\
+.formulario-b2b input:focus \{\
+    outline: none;\
+    border-color: var(--naranja-magma);\
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);\
+\}\
+\
+/* Pie de p\'e1gina */\
+footer \{\
+    text-align: center;\
+    padding: 30px;\
+    background-color: #050505;\
+    color: var(--texto-gris);\
+    font-size: 0.9rem;\
+\}\
+\
+/* Dise\'f1o Adaptable para Celulares */\
+@media (max-width: 768px) \{\
+    .hero h1 \{ font-size: 2.2rem; \}\
+    .grid-2 \{ grid-template-columns: 1fr; text-align: center; \}\
+    .contacto-box \{ padding: 30px 20px; \}\
 \}}
