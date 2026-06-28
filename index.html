@@ -23,7 +23,7 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
         body {
-            background: transparent; /* Ahora el fondo es transparente para que se vea la lava */
+            background: transparent;
             color: var(--white);
             font-family: 'Inter', sans-serif;
             line-height: 1.65;
@@ -160,10 +160,11 @@
         .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.3); }
         .btn-ghost:hover { border-color: var(--orange); color: var(--orange); box-shadow: 0 0 14px rgba(255,115,0,.2); }
         .btn-block { width: 100%; justify-content: center; padding: 17px; font-size: .9rem; margin-top: 22px; }
+        .btn:disabled { opacity: 0.7; cursor: not-allowed; pointer-events: none; }
 
         /* ─── STATS STRIP ─── */
         .stats-strip {
-            background: rgba(18, 9, 7, 0.85); /* Traslúcido */
+            background: rgba(18, 9, 7, 0.85); 
             backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
             border-top: 1px solid rgba(255,42,0,.22);
             border-bottom: 1px solid rgba(255,42,0,.22);
@@ -187,7 +188,7 @@
         /* ─── BENEFIT CARDS ─── */
         .ben-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
         .ben-card {
-            background: rgba(18, 9, 7, 0.75); /* Efecto cristal para ver la lava detrás */
+            background: rgba(18, 9, 7, 0.75); 
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255,42,0,.2);
             border-bottom: 3px solid var(--red); border-radius: 12px;
@@ -229,7 +230,7 @@
         /* ─── PACKAGES ─── */
         .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
         .pkg-card {
-            background: rgba(18, 9, 7, 0.75); /* Cristal */
+            background: rgba(18, 9, 7, 0.75); 
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255,115,0,.28);
             border-radius: 14px; overflow: hidden; transition: all .3s; position: relative;
@@ -377,7 +378,7 @@
     </div>
 
     <!-- ── WHATSAPP FLOAT ── -->
-    <a href="https://wa.me/50512345678" target="_blank" rel="noopener" class="wa-btn" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/50587871629" target="_blank" rel="noopener" class="wa-btn" aria-label="Contactar por WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
@@ -728,7 +729,7 @@
     }, { threshold: .5 });
     document.querySelectorAll('.stat-n[data-target]').forEach(el => co.observe(el));
 
-    /* ── FORM VALIDATION ── */
+    /* ── FORM VALIDATION & SUBMIT ── */
     const form   = document.getElementById('cForm');
     const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
@@ -759,9 +760,36 @@
             setErr(c.id, bad);
             if (bad) valid = false;
         });
+        
         if (valid) {
-            form.style.display = 'none';
-            document.getElementById('ok').style.display = 'block';
+            const btn = form.querySelector('button[type="submit"]');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            fetch("https://formsubmit.co/ajax/emermeneses181927@icloud.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    Nombre: document.getElementById('fn').value,
+                    Empresa: document.getElementById('co').value,
+                    Correo: document.getElementById('em').value,
+                    Personas: document.getElementById('gu').value
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                form.style.display = 'none';
+                document.getElementById('ok').style.display = 'block';
+            })
+            .catch(error => {
+                console.log(error);
+                btn.textContent = 'Solicitar Cotización 🌋';
+                btn.disabled = false;
+                alert('Hubo un error de conexión. Por favor intenta de nuevo.');
+            });
         }
     });
     </script>
