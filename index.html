@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magma | Premium B2B</title>
-    <!-- Fuente premium de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
@@ -12,6 +11,7 @@
 </head>
 <body>
     
+    <!-- HERO SECTION -->
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -22,48 +22,95 @@
         </div>
     </header>
 
-    <section class="info-section">
+    <!-- SECCIÓN DE BENEFICIOS (NUEVO) -->
+    <section class="benefits-section">
         <div class="container">
-            <div class="info-grid">
-                <div class="text-block">
-                    <h2>Rompe el <span class="highlight">Hielo Corporativo</span></h2>
-                    <p>Magma no es solo una bebida. Es el punto de encuentro perfecto para activaciones de marca y eventos empresariales. Elevamos la estética de tu evento con montajes impecables y sabores que dejan huella.</p>
+            <h2 class="text-center">Por qué elegir <span class="highlight">Magma</span></h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>🧊 Cero Estrés Logístico</h3>
+                    <p>Nos encargamos del montaje completo, operación de las máquinas y desmontaje en tu evento.</p>
                 </div>
-                <div class="image-block">
-                    <img src="img/Granizadosolo.png" alt="Vaso Magma">
+                <div class="benefit-card">
+                    <h3>⚡ Impacto Visual</h3>
+                    <p>Barras iluminadas y colores neón que se vuelven el centro de atención de cualquier activación.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🚀 Sabores Explosivos</h3>
+                    <p>Menú personalizable con opciones con o sin alcohol para adaptarse al perfil de tus invitados.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="gallery-section">
+    <!-- CATÁLOGO DE PAQUETES (NUEVO) -->
+    <section class="catalog-section">
         <div class="container">
-            <h2 class="text-center">LA EXPERIENCIA <span class="highlight">MAGMA</span></h2>
-            <div class="gallery-grid">
-                <div class="card">
-                    <img src="img/Granizadodecerca.png" alt="Detalle">
+            <h2 class="text-center">Paquetes <span class="highlight">Corporativos</span></h2>
+            <div class="packages-grid">
+                
+                <!-- Paquete 1 -->
+                <div class="package-card">
+                    <img src="img/Granizadosolo.png" alt="Paquete Start" class="package-img">
+                    <div class="package-content">
+                        <h3>Paquete Startup</h3>
+                        <p class="package-price">Ideal para reuniones pequeñas</p>
+                        <ul class="specs-list">
+                            <li><span>Capacidad:</span> <span>Hasta 50 personas</span></li>
+                            <li><span>Sabores:</span> <span>2 a elegir</span></li>
+                            <li><span>Duración:</span> <span>2 Horas de servicio</span></li>
+                            <li><span>Incluye:</span> <span>1 Operador Magma</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="img/3granizados.jpg" alt="Línea de productos">
+
+                <!-- Paquete 2 -->
+                <div class="package-card premium-card">
+                    <div class="badge">MÁS VENDIDO</div>
+                    <img src="img/3granizados.jpg" alt="Paquete Corporate" class="package-img">
+                    <div class="package-content">
+                        <h3>Corporate Pro</h3>
+                        <p class="package-price">Para activaciones medianas</p>
+                        <ul class="specs-list">
+                            <li><span>Capacidad:</span> <span>Hasta 150 personas</span></li>
+                            <li><span>Sabores:</span> <span>4 a elegir</span></li>
+                            <li><span>Duración:</span> <span>4 Horas de servicio</span></li>
+                            <li><span>Incluye:</span> <span>Barra completa + 2 Op.</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="img/Fotopromocional.png" alt="Montaje">
+
+                <!-- Paquete 3 -->
+                <div class="package-card">
+                    <img src="img/Fotopromocional.png" alt="Paquete Summit" class="package-img">
+                    <div class="package-content">
+                        <h3>Magma Summit</h3>
+                        <p class="package-price">Congresos y fin de año</p>
+                        <ul class="specs-list">
+                            <li><span>Capacidad:</span> <span>+300 personas</span></li>
+                            <li><span>Sabores:</span> <span>Menú completo + Mixología</span></li>
+                            <li><span>Duración:</span> <span>Evento completo</span></li>
+                            <li><span>Incluye:</span> <span>Montaje VIP + Personalización</span></li>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- FORMULARIO DE CONTACTO -->
     <section id="cotizar" class="contact-section">
         <div class="container">
             <div class="glass-form">
                 <img src="img/isotipo.png" alt="Magma Isotipo" class="iso-small">
                 <h2>Alianzas B2B</h2>
-                <p>Ingresa los datos de tu empresa para diseñar una propuesta a la medida.</p>
+                <p>Ingresa los datos de tu empresa para enviarte una cotización formal de nuestros paquetes.</p>
                 <form>
                     <input type="text" placeholder="Nombre completo" required>
                     <input type="text" placeholder="Empresa" required>
                     <input type="email" placeholder="Correo corporativo" required>
-                    <input type="text" placeholder="Número de invitados" required>
+                    <input type="text" placeholder="Número estimado de invitados" required>
                     <button type="submit" class="btn-primary full-width">Solicitar Propuesta</button>
                 </form>
             </div>
