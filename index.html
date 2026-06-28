@@ -3,73 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magma | Granizados para Eventos Corporativos</title>
+    <title>Magma | Premium B2B</title>
+    <!-- Fuente premium de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Sección Principal (Hero) -->
+    
     <header class="hero">
-        <div class="contenido-hero">
-            <img src="img/Logo.png" alt="Logo Magma" class="logo">
-            <h1>Energía volcánica para tu próximo evento corporativo</h1>
-            <p>Granizados con sabores explosivos diseñados para romper el hielo en tus reuniones y fiestas empresariales.</p>
-            <a href="#contacto" class="btn-volcan">Lleva la erupción a tu evento</a>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="img/Logo.png" alt="Magma Logo" class="logo-premium">
+            <h1>LA ENERGÍA QUE TU EVENTO NECESITA.</h1>
+            <p>Granizados de alta gama con sabores explosivos. Diseñados exclusivamente para transformar reuniones corporativas en experiencias dinámicas.</p>
+            <a href="#cotizar" class="btn-primary">Agendar Experiencia</a>
         </div>
     </header>
 
-    <!-- Sección: ¿Qué es Magma? -->
-    <section class="seccion-info dark-bg">
-        <div class="contenedor grid-2">
-            <div class="texto-info">
-                <h2>¿Qué es <span class="resaltado">Magma</span>?</h2>
-                <p>Somos la chispa que le falta a tus eventos corporativos. Magma ofrece un servicio premium de granizados que saca a tus invitados de la rutina corporativa. No es solo una bebida, es una experiencia dinámica que eleva la energía de cualquier activación de marca, fiesta de fin de año o congreso.</p>
-            </div>
-            <div class="imagen-info">
-                <!-- Usamos tu imagen del granizado solo para ilustrar -->
-                <img src="img/Granizadosolo.png" alt="Vaso de granizado Magma">
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección: Galería / Lo que ofrecemos -->
-    <section class="seccion-galeria">
-        <div class="contenedor">
-            <h2 class="text-center">Sabores que <span class="resaltado">hacen erupción</span></h2>
-            <p class="text-center subtitulo">Nuestros montajes y granizados en acción</p>
-            <div class="galeria-grid">
-                <div class="galeria-item">
-                    <img src="img/Granizadodecerca.png" alt="Granizado de cerca">
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="text-block">
+                    <h2>Rompe el <span class="highlight">Hielo Corporativo</span></h2>
+                    <p>Magma no es solo una bebida. Es el punto de encuentro perfecto para activaciones de marca y eventos empresariales. Elevamos la estética de tu evento con montajes impecables y sabores que dejan huella.</p>
                 </div>
-                <div class="galeria-item">
-                    <img src="img/3granizados.jpg" alt="Tres granizados Magma">
-                </div>
-                <div class="galeria-item">
-                    <img src="img/Fotopromocional.png" alt="Foto promocional Magma">
+                <div class="image-block">
+                    <img src="img/Granizadosolo.png" alt="Vaso Magma">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección: Captación de Clientes (Formulario B2B) -->
-    <section id="contacto" class="seccion-contacto dark-bg">
-        <div class="contenedor">
-            <div class="contacto-box">
-                <img src="img/isotipo.png" alt="Isotipo Magma" class="isotipo">
-                <h2>Cotiza para tu próximo evento</h2>
-                <p>Déjanos los datos de tu empresa y nos pondremos en contacto para armar un paquete a la medida.</p>
-                <form class="formulario-b2b">
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="text-center">LA EXPERIENCIA <span class="highlight">MAGMA</span></h2>
+            <div class="gallery-grid">
+                <div class="card">
+                    <img src="img/Granizadodecerca.png" alt="Detalle">
+                </div>
+                <div class="card">
+                    <img src="img/3granizados.jpg" alt="Línea de productos">
+                </div>
+                <div class="card">
+                    <img src="img/Fotopromocional.png" alt="Montaje">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cotizar" class="contact-section">
+        <div class="container">
+            <div class="glass-form">
+                <img src="img/isotipo.png" alt="Magma Isotipo" class="iso-small">
+                <h2>Alianzas B2B</h2>
+                <p>Ingresa los datos de tu empresa para diseñar una propuesta a la medida.</p>
+                <form>
                     <input type="text" placeholder="Nombre completo" required>
-                    <input type="text" placeholder="Nombre de la Empresa" required>
+                    <input type="text" placeholder="Empresa" required>
                     <input type="email" placeholder="Correo corporativo" required>
-                    <input type="text" placeholder="Cantidad estimada de invitados" required>
-                    <button type="submit" class="btn-volcan w-100">Solicitar Cotización</button>
+                    <input type="text" placeholder="Número de invitados" required>
+                    <button type="submit" class="btn-primary full-width">Solicitar Propuesta</button>
                 </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Magma. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Magma Corporate. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
