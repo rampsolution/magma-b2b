@@ -23,11 +23,31 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
         body {
-            background: var(--black);
+            background: transparent; /* Ahora el fondo es transparente para que se vea la lava */
             color: var(--white);
             font-family: 'Inter', sans-serif;
             line-height: 1.65;
             overflow-x: hidden;
+        }
+
+        /* ─── EFECTO MAGMA ANIMADO (FONDO) ─── */
+        .magma-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1; 
+            background: radial-gradient(circle at center, #0a0301 0%, #000000 100%);
+            overflow: hidden;
+        }
+        .magma-glow {
+            position: absolute; border-radius: 50%; filter: blur(90px);
+            animation: pulseGlow 10s infinite alternate ease-in-out;
+        }
+        .g1 { width: 50vw; height: 50vw; background: rgba(255, 42, 0, 0.15); top: -10%; left: -10%; }
+        .g2 { width: 60vw; height: 60vw; background: rgba(255, 115, 0, 0.12); bottom: -20%; right: -10%; animation-delay: -4s; }
+        .g3 { width: 45vw; height: 45vw; background: rgba(220, 20, 0, 0.15); top: 30%; left: 40%; animation-delay: -7s; }
+
+        @keyframes pulseGlow {
+            0%   { transform: scale(0.8) translate(0, 0); opacity: 0.5; }
+            100% { transform: scale(1.2) translate(50px, 30px); opacity: 1; }
         }
 
         /* ─── UTILS ─── */
@@ -60,7 +80,7 @@
         }
         #nav.solid {
             background: rgba(6,3,2,.96);
-            backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
             box-shadow: 0 2px 24px rgba(255,42,0,.16);
             border-bottom: 1px solid rgba(255,42,0,.2);
         }
@@ -143,7 +163,8 @@
 
         /* ─── STATS STRIP ─── */
         .stats-strip {
-            background: var(--rock);
+            background: rgba(18, 9, 7, 0.85); /* Traslúcido */
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
             border-top: 1px solid rgba(255,42,0,.22);
             border-bottom: 1px solid rgba(255,42,0,.22);
             padding: 52px 0;
@@ -166,7 +187,9 @@
         /* ─── BENEFIT CARDS ─── */
         .ben-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
         .ben-card {
-            background: var(--rock); border: 1px solid rgba(255,42,0,.2);
+            background: rgba(18, 9, 7, 0.75); /* Efecto cristal para ver la lava detrás */
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,42,0,.2);
             border-bottom: 3px solid var(--red); border-radius: 12px;
             padding: 38px 30px; transition: transform .3s, box-shadow .3s;
             position: relative; overflow: hidden;
@@ -206,7 +229,9 @@
         /* ─── PACKAGES ─── */
         .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
         .pkg-card {
-            background: var(--rock); border: 1px solid rgba(255,115,0,.28);
+            background: rgba(18, 9, 7, 0.75); /* Cristal */
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,115,0,.28);
             border-radius: 14px; overflow: hidden; transition: all .3s; position: relative;
         }
         .pkg-card:hover { border-color: var(--yellow); box-shadow: 0 0 34px rgba(255,42,0,.28); transform: translateY(-4px); }
@@ -233,7 +258,9 @@
         /* ─── TESTIMONIALS ─── */
         .tes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(275px, 1fr)); gap: 22px; }
         .tes-card {
-            background: var(--rock); border: 1px solid rgba(255,42,0,.14);
+            background: rgba(18, 9, 7, 0.75);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,42,0,.14);
             border-radius: 12px; padding: 32px 28px;
             position: relative; transition: box-shadow .3s;
         }
@@ -258,7 +285,8 @@
         /* ─── CONTACT FORM ─── */
         .contact-box {
             max-width: 560px; margin: 0 auto;
-            background: linear-gradient(145deg, var(--rock), #070301);
+            background: linear-gradient(145deg, rgba(18,9,7,0.85), rgba(7,3,1,0.95));
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--red); border-radius: 16px;
             padding: 56px 44px; text-align: center;
             box-shadow: 0 0 50px rgba(255,42,0,.1);
@@ -335,10 +363,18 @@
         @media (prefers-reduced-motion: reduce) {
             .reveal      { opacity: 1; transform: none; transition: none; }
             .wa-btn      { animation: none; }
+            .magma-glow  { animation: none; }
         }
     </style>
 </head>
 <body>
+
+    <!-- ─── FONDO DE MAGMA ANIMADO ─── -->
+    <div class="magma-bg">
+        <div class="magma-glow g1"></div>
+        <div class="magma-glow g2"></div>
+        <div class="magma-glow g3"></div>
+    </div>
 
     <!-- ── WHATSAPP FLOAT ── -->
     <a href="https://wa.me/50512345678" target="_blank" rel="noopener" class="wa-btn" aria-label="Contactar por WhatsApp">
@@ -567,7 +603,7 @@
     </section>
 
     <!-- ── FORMULARIO ── -->
-    <section class="sec" id="cotizar" style="background: radial-gradient(ellipse at center, rgba(255,42,0,.04) 0%, transparent 70%);">
+    <section class="sec" id="cotizar">
         <div class="container">
             <div class="contact-box reveal">
                 <img src="img/isotipo.png" alt="Magma" class="contact-iso">
