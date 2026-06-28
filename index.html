@@ -11,7 +11,7 @@
     <style>
         /* === ESTILO MAGMA LITERAL === */
         :root {
-            --volcano-dark: #0a0503; /* Casi negro con un toque rojizo */
+            --volcano-dark: #0a0503;
             --volcano-rock: #140a08;
             --magma-red: #ff2a00;
             --magma-orange: #ff7300;
@@ -26,7 +26,6 @@
             background-color: var(--volcano-dark); 
             color: var(--text-light); 
             line-height: 1.6; 
-            /* Fondo sutil de "calor" radiante */
             background-image: radial-gradient(circle at 50% 0%, rgba(255, 42, 0, 0.1) 0%, transparent 70%);
         }
         
@@ -55,7 +54,7 @@
             font-size: 1rem; 
             border: none;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(255, 42, 0, 0.5); /* Resplandor */
+            box-shadow: 0 0 20px rgba(255, 42, 0, 0.5); 
             transition: all 0.3s ease; 
         }
         .btn-magma:hover { 
@@ -66,7 +65,7 @@
         }
         .full-width { width: 100%; margin-top: 20px; }
 
-        /* HERO SECTION */
+        /* HERO SECTION (CON TU NUEVA FOTO PRINCIPAL) */
         .hero { 
             position: relative; 
             height: 100vh; 
@@ -74,11 +73,11 @@
             align-items: center; 
             justify-content: center; 
             text-align: center; 
-            background: url('img/Heroprincipaldela\\ páginadeinicio.png') center/cover no-repeat; 
+            background: url("img/Heroprincipaldela páginadeinicio copia.png") center/cover no-repeat; 
         }
         .hero-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: linear-gradient(to bottom, rgba(10,5,3,0.6), rgba(10,5,3,0.95)); 
+            background: linear-gradient(to bottom, rgba(10,5,3,0.5), rgba(10,5,3,0.95)); 
             z-index: 1; 
         }
         .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
