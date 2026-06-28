@@ -4,10 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magma | Premium B2B</title>
+    <!-- Fuente premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Todo el diseño (CSS) incrustado directamente aquí para que no falle -->
+    <style>
+        :root {
+            --bg-dark: #000000;
+            --bg-card: rgba(25, 25, 25, 0.6);
+            --magma-orange: #FF3300;
+            --text-main: #FFFFFF;
+            --text-muted: #888888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+        .highlight { color: var(--magma-orange); }
+        .text-center { text-align: center; }
+
+        /* HERO SECTION */
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('img/Heroprincipaldela\\ páginadeinicio.png') center/cover no-repeat; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9)); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
+        .logo-premium { width: 180px; margin-bottom: 30px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { color: var(--text-muted); font-size: 1.2rem; font-weight: 300; margin-bottom: 40px; padding: 0 10%; }
+
+        /* BOTONES */
+        .btn-primary { display: inline-block; background-color: var(--text-main); color: var(--bg-dark); padding: 16px 40px; border-radius: 4px; font-weight: 800; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; font-size: 0.9rem; transition: all 0.3s ease; border: 1px solid transparent; }
+        .btn-primary:hover { background-color: transparent; color: var(--text-main); border: 1px solid var(--text-main); }
+        .full-width { width: 100%; margin-top: 10px; cursor: pointer; }
+
+        /* SECCIONES Y BENEFICIOS */
+        .benefits-section, .catalog-section, .contact-section { padding: 100px 0; background-color: #080808; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 40px; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .benefit-card { background: var(--bg-card); padding: 40px 30px; border-radius: 8px; border-left: 3px solid var(--magma-orange); transition: transform 0.3s; }
+        .benefit-card:hover { transform: translateY(-5px); }
+        .benefit-card h3 { margin-bottom: 15px; font-size: 1.2rem; }
+        .benefit-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* CATÁLOGO DE PAQUETES */
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .package-card { background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; position: relative; transition: all 0.3s; }
+        .package-card:hover { border-color: var(--magma-orange); box-shadow: 0 10px 30px rgba(255, 51, 0, 0.15); }
+        .premium-card { transform: scale(1.05); border-color: var(--magma-orange); z-index: 2; }
+        .badge { position: absolute; top: 15px; right: -30px; background: var(--magma-orange); color: #fff; font-size: 0.7rem; font-weight: 800; padding: 5px 40px; transform: rotate(45deg); letter-spacing: 1px; }
+        .package-img { width: 100%; height: 220px; object-fit: cover; filter: brightness(0.8); }
+        .package-content { padding: 30px; }
+        .package-price { color: var(--magma-orange); font-weight: 500; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase; }
+        .specs-list { list-style: none; }
+        .specs-list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+        .specs-list li span:first-child { color: var(--text-muted); }
+
+        /* FORMULARIO GLASSMORPHISM */
+        .glass-form { background: var(--bg-card); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); padding: 60px 40px; border-radius: 12px; max-width: 550px; margin: 0 auto; text-align: center; }
+        .iso-small { width: 50px; margin-bottom: 20px; }
+        .glass-form p { color: var(--text-muted); margin-bottom: 30px; font-weight: 300; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input { width: 100%; padding: 16px; background-color: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; color: var(--text-main); font-size: 1rem; font-family: 'Inter', sans-serif; outline: none; transition: border 0.3s ease; }
+        input:focus { border-color: var(--text-main); }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted); font-size: 0.8rem; background-color: #000; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .glass-form { padding: 40px 20px; } .premium-card { transform: scale(1); } }
+    </style>
 </head>
 <body>
     
@@ -22,7 +87,7 @@
         </div>
     </header>
 
-    <!-- SECCIÓN DE BENEFICIOS (NUEVO) -->
+    <!-- SECCIÓN DE BENEFICIOS -->
     <section class="benefits-section">
         <div class="container">
             <h2 class="text-center">Por qué elegir <span class="highlight">Magma</span></h2>
@@ -43,12 +108,11 @@
         </div>
     </section>
 
-    <!-- CATÁLOGO DE PAQUETES (NUEVO) -->
+    <!-- CATÁLOGO DE PAQUETES -->
     <section class="catalog-section">
         <div class="container">
             <h2 class="text-center">Paquetes <span class="highlight">Corporativos</span></h2>
             <div class="packages-grid">
-                
                 <!-- Paquete 1 -->
                 <div class="package-card">
                     <img src="img/Granizadosolo.png" alt="Paquete Start" class="package-img">
@@ -90,11 +154,10 @@
                             <li><span>Capacidad:</span> <span>+300 personas</span></li>
                             <li><span>Sabores:</span> <span>Menú completo + Mixología</span></li>
                             <li><span>Duración:</span> <span>Evento completo</span></li>
-                            <li><span>Incluye:</span> <span>Montaje VIP + Personalización</span></li>
+                            <li><span>Incluye:</span> <span>Montaje VIP + Personal.</span></li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
