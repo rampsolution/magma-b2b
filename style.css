@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 body \{\
+    margin: 0;\
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;\
+    background-color: #121212; /* Fondo corporativo oscuro */\
+    color: #ffffff;\
+\}\
+\
+.hero \{\
+    height: 100vh;\
+    display: flex;\
+    flex-direction: column;\
+    justify-content: center;\
+    align-items: center;\
+    text-align: center;\
+    /* Aqu\'ed luego puedes poner tu banner de fondo cambiando la URL */\
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)); \
+    padding: 0 20px;\
+\}\
+\
+h1 \{\
+    font-size: 3.5rem;\
+    color: #ff4500; /* Naranja magma */\
+    margin-bottom: 15px;\
+    font-weight: 800;\
+\}\
+\
+p \{\
+    font-size: 1.2rem;\
+    color: #cccccc;\
+    margin-bottom: 40px;\
+\}\
+\
+.btn-volcan \{\
+    padding: 15px 35px;\
+    background-color: #ffaa00; /* Amarillo brillante */\
+    color: #000;\
+    text-decoration: none;\
+    font-weight: bold;\
+    border-radius: 8px;\
+    text-transform: uppercase;\
+    letter-spacing: 1px;\
+    transition: all 0.3s ease;\
+\}\
+\
+.btn-volcan:hover \{\
+    background-color: #ff4500; /* Cambia a rojo fuego al pasar el mouse */\
+    color: #fff;\
+    transform: scale(1.05);\
+\}}
