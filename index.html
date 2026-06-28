@@ -626,6 +626,14 @@
                         <input type="email" id="em" placeholder="correo@tuempresa.com" autocomplete="email">
                         <div class="field-msg" id="em-msg">Ingresa un correo válido.</div>
                     </div>
+                    
+                    <!-- NUEVO CAMPO DE TELÉFONO -->
+                    <div class="field">
+                        <label for="ph">Número de teléfono</label>
+                        <input type="tel" id="ph" placeholder="Ej: +505 8888 8888" autocomplete="tel">
+                        <div class="field-msg" id="ph-msg">Por favor ingresa un número de contacto.</div>
+                    </div>
+
                     <div class="field">
                         <label for="gu">¿Cuántas personas asistirán?</label>
                         <input type="text" id="gu" placeholder="Ej: 150 personas">
@@ -649,7 +657,7 @@
                 <a href="#" aria-label="Instagram">IG</a>
                 <a href="#" aria-label="Facebook">FB</a>
                 <a href="#" aria-label="LinkedIn">LI</a>
-                <a href="#" aria-label="WhatsApp">WA</a>
+                <a href="https://wa.me/50587871629" aria-label="WhatsApp">WA</a>
             </div>
             <p class="foot-copy">&copy; 2026 Magma Corporativo. Todos los derechos reservados.</p>
         </div>
@@ -740,7 +748,7 @@
         msg && (msg.style.display = show ? 'block' : 'none');
     }
 
-    ['fn','co','em','gu'].forEach(id => {
+    ['fn','co','em','ph','gu'].forEach(id => {
         const el = document.getElementById(id);
         el && el.addEventListener('input', () => setErr(id, false));
     });
@@ -751,6 +759,7 @@
             { id: 'fn', ok: v => v.trim().length >= 2 },
             { id: 'co', ok: v => v.trim().length >= 2 },
             { id: 'em', ok: v => isEmail(v) },
+            { id: 'ph', ok: v => v.trim().length >= 8 }, /* Chequeo para el teléfono */
             { id: 'gu', ok: v => v.trim().length >= 1 }
         ];
         let valid = true;
@@ -776,6 +785,7 @@
                     Nombre: document.getElementById('fn').value,
                     Empresa: document.getElementById('co').value,
                     Correo: document.getElementById('em').value,
+                    Telefono: document.getElementById('ph').value,
                     Personas: document.getElementById('gu').value
                 })
             })
